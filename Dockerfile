@@ -1,10 +1,10 @@
 FROM centos:7.6.1810
 
-LABEL name="Firebird 2.5.8" \
+LABEL name="Firebird 1.5.6" \
     vendor="CentOS" \
     license="GPLv2" \
-	maintainer="helion@mendanha.com.br" \
-    build-date="20190216" 
+    maintainer="helion@mendanha.com.br" \
+    build-date="20190216"
 	
 RUN yum -y install epel-release \
 	&& yum -y upgrade \
