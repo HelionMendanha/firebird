@@ -1,6 +1,6 @@
 FROM centos:7.6.1810
 
-LABEL name="Firebird 1.5.6" \
+LABEL name="Firebird 2.5.8" \
     vendor="CentOS" \
     license="GPLv2" \
     maintainer="helion@mendanha.com.br" \
