@@ -7,7 +7,7 @@ LABEL name="Firebird CS 1.5.6" \
     build-date="20190217" 
 
 ADD files/FirebirdSS-1.5.6.5026-0.i686.rpm /root
-ADD files/UDF.zip /root
+ADD files/UDF.tar.gz /root
 
 RUN yum -y install epel-release \
 	&& yum -y upgrade \
@@ -17,8 +17,8 @@ RUN yum -y install epel-release \
 	&& yum -y install FirebirdSS-1.5.6.5026-0.i686.rpm \
 	&& cat /opt/firebird/firebird.conf | sed s/'#RemoteAuxPort = 0'/'RemoteAuxPort = 3051'/g > /opt/firebird/firebird.conf \
 	&& cat /opt/firebird/firebird.conf | sed s/'#RemoteServicePort = 3050'/'RemoteServicePort = 3050'/g > /opt/firebird/firebird.conf \
-	&& unzip /root/UDF.zip -d /opt/firebird \
-	&& rm -rf /root/FirebirdSS-1.5.6.5026-0.i686.rpm /root/UDF.zip
+	&& mv /root/UDF/* /opt/firebird/UDF \
+	&& rm -rf /root/FirebirdSS-1.5.6.5026-0.i686.rpm /root/UDF
 
 WORKDIR /root
 
