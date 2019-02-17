@@ -1,4 +1,4 @@
-FROM centos:7.6.1810
+FROM helionmendanha/centos-epel:7.6.1810
 
 LABEL name="Firebird 2.5.8" \
     vendor="CentOS" \
